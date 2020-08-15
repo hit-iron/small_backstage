@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import './plugins/element.js'
 import axios from 'axios';
+import TreeTable from 'vue-table-with-tree-grid'
 axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/';
 
 // 在 request 拦截器中，展示进度条 NProgress.start()
@@ -21,6 +22,8 @@ import './assets/css/global.css'
 import './assets/fonts/iconfont.css'
 
 Vue.config.productionTip = false
+
+Vue.component('tree-table', TreeTable)
 
 new Vue({
   router,
