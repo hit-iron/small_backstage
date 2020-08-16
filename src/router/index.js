@@ -11,6 +11,8 @@ import Welcome from '../views/home/Welcome.vue';
 import User from '../views/home/User.vue';
 import Roles from '../views/power/Roles.vue';
 import Cate from '../views/goods/Cate.vue'
+import Params from '../views/goods/Params.vue'
+import GoodsList from '../views/goods/GoodsList.vue'
 
 
 const routes = [
@@ -31,7 +33,8 @@ const routes = [
       { path: '/users', component: User },
       { path: '/roles', component: Roles },
       { path: '/categories', component: Cate },
-
+      { path: '/params', component: Params },
+      { path: '/goods', component: GoodsList },
 
 
     ]

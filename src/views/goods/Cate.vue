@@ -236,7 +236,7 @@ export default {
       } else {
         // 父级分类的Id
         this.addCateForm.cat_pid = 0;
-        // 为当前分类的等级赋值
+        // 为当前分类的等级赋值git
         this.addCateForm.cat_level = 0;
       }
     },
