@@ -1,25 +1,21 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import store from './store'
-import './plugins/element.js'
-import axios from 'axios';
+// 导入字体图标
+import './assets/fonts/iconfont.css'
+// 导入全局样式表
+import './assets/css/global.css'
 import TreeTable from 'vue-table-with-tree-grid'
 
 // 导入富文本编辑器
 import VueQuillEditor from 'vue-quill-editor'
-// require styles 导入富文本编辑器对应的样式
-import 'quill/dist/quill.core.css'
-import 'quill/dist/quill.snow.css'
-import 'quill/dist/quill.bubble.css'
 
 // 导入 NProgress 包对应的JS和CSS
 import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
 
+import axios from 'axios'
+// 配置请求的跟路径
 axios.defaults.baseURL = 'http://timemeetyou.com:8889/api/private/v1/';
-
-
 // 在 request 拦截器中，展示进度条 NProgress.start()
 axios.interceptors.request.use(config => {
   // console.log(config)
@@ -33,16 +29,12 @@ axios.interceptors.response.use(config => {
   NProgress.done()
   return config
 })
-Vue.prototype.$http = axios;
-//导入全局样式表
-import './assets/css/global.css'
-//导入字体图标样式表
-import './assets/fonts/iconfont.css'
+Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
 Vue.component('tree-table', TreeTable)
-
+// 将富文本编辑器，注册为全局可用的组件
 Vue.use(VueQuillEditor)
 
 Vue.filter('dateFormat', function (originVal) {
@@ -61,6 +53,5 @@ Vue.filter('dateFormat', function (originVal) {
 
 new Vue({
   router,
-  store,
   render: h => h(App)
 }).$mount('#app')

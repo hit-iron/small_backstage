@@ -185,7 +185,7 @@ export default {
         return this.$message.error("获取商品分类失败！");
       }
 
-      console.log(res.data);
+      // console.log(res.data);
       // 把数据列表，赋值给 catelist
       this.catelist = res.data.result;
       // 为总数据条数赋值

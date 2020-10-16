@@ -251,7 +251,7 @@ export default {
 
       this.catelist = res.data;
 
-      console.log(this.catelist);
+      // console.log(this.catelist);
     },
     // 级联选择框选中项变化，会触发这个函数
     handleChange() {
